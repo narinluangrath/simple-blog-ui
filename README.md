@@ -1,6 +1,11 @@
-# Simple Blog
+# Simple Journal (UI)
 
 A simple journal for storing text and photos. Made with React.
+
+<img src="screenshots/login.png" style="border: 1px solid lightgrey" width="400">
+<img src="screenshots/home.png" style="border: 1px solid lightgrey" width="400">
+<img src="screenshots/compose1.png" style="border: 1px solid lightgrey" width="400">
+<img src="screenshots/view.png" style="border: 1px solid lightgrey" width="400">
 
 ## Features
 
