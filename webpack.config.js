@@ -35,6 +35,7 @@ module.exports = {
 	},
 	devServer : {
     historyApiFallback : true,
+    port : 8081,
     publicPath : '/',
     contentBase : DIST, // the folder to server files from
     watchOptions : {
