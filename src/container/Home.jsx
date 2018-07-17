@@ -10,6 +10,19 @@ import Preview from '../presentational/Preview'
 import { getPosts } from '../actions'
 import './Home.scss'
 
+function byTime( a, b ) {
+
+  if ( a.date > b.date ) {
+    return -1
+  }
+  if ( a.date < b.date ) {
+    return 1
+  }
+  // a must be equal to b
+  return 0
+
+}
+
 class Home extends PureComponent {
 
 	constructor( props ) {
@@ -35,7 +48,7 @@ class Home extends PureComponent {
             <Link to='/compose'><Button>Add Post</Button></Link>
           </div>
            {posts && posts.length === 0 ? "It looks like you haven't written anything yet. Click 'add post' to get started!" :
-           posts ? posts.map( post => <Preview key={post.id} {...post}/> ) :
+           posts ? posts.concat().sort( byTime ).map( post => <Preview key={post.id} {...post}/> ) :
            'Loading...'}                     
         </div>
       </div>
