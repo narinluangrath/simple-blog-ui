@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 
+import { API_SERVER } from '../../config'
 import Google from '../utils/Google'
 import { setAuth } from '../actions'
 import config from '../../config'
@@ -24,6 +25,9 @@ class Login extends Component {
   render() {
 
     if ( this.state.isSignedIn ) {
+      const id_token = Google.getUserIdToken()
+      axios.post( API_SERVER + '/setup', { token : id_token } )
+           .catch( console.error )
       return <Redirect to='/' />
     }
 
